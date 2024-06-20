@@ -3,9 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>안녕하세요</title>
 </head>
 <body>
-    <p>Hello World!</p>
+    <input type="text" id="inputField">
+    <button id="load" onclick=load()>불러오기</button>
+    <p id="memo"></p>
+    <script>
+        // document.getElementById("load").addEventListener("click", ()=>{
+        //     let getText = document.getElementById("inputField").value
+        //     document.getElementById("memo").innerHTML = getText
+        //     console.log(getText)
+        // })
+        const load = () =>{
+            let getText2 = document.getElementById("inputField").value
+            document.getElementById("memo").innerHTML = getText2
+            console.log(getText2)
+        }
+    </script>
 </body>
 </html>
