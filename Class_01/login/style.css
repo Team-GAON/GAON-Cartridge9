@@ -52,6 +52,9 @@ input{
     border: none;
     cursor: pointer;
 }
-/* #check{
-    width: 20px;
-} */
+a{
+    display: inline;
+    font-weight: bold;
+    color: darkblue;
+    text-decoration: none;
+}
