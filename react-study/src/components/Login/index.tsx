@@ -1,8 +1,8 @@
-import axios from "axios";
 import useAuth from "../../hooks/auth/useAuth";
 
-const Signup = () => {
-  const {...auth} = useAuth()
+const Login = () => {
+
+  const {...auth} = useAuth();
 
   return (
     <div
@@ -15,26 +15,26 @@ const Signup = () => {
         alignItems: "center",
       }}
     >
-      <h1 style={{ marginBottom: "30px" }}>회원가입</h1>
+      <h1 style={{ marginBottom: "30px" }}>로그인</h1>
       <input
         type="text"
         placeholder="아이디"
         style={{ marginBottom: "12px" }}
         name="username"
-        value={auth.signUpData.username}
-        onChange={auth.handleSignup}
+        value={auth.loginData.username}
+        onChange={auth.handleLogin}
       />
       <input
         type="text"
         placeholder="비밀번호"
         style={{ marginBottom: "12px" }}
         name='password'
-        value={auth.signUpData.password}
-        onChange={auth.handleSignup}
+        value={auth.loginData.password}
+        onChange={auth.handleLogin}
       />
-      <button style={{ width: "100px" }} onClick={auth.signup} disabled={auth.loading}>{auth.loading ? '회원가입 중...' : '회원가입'}</button>
+      <button style={{ width: "100px" }} onClick={auth.login} disabled={auth.loading}>{auth.loading ? '로그인 중...' : '로그인'}</button>
     </div>
   );
 };
 
-export default Signup;
+export default Login;
