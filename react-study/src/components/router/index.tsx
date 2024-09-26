@@ -3,6 +3,7 @@ import Main from "../Main"
 import Signup from "../Signup"
 import Login from "../Login"
 import Write from "../Write"
+import BoardDetail from "../BoardDetail"
 
 const Router = () => {
   return (
@@ -12,6 +13,7 @@ const Router = () => {
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />}/>
         <Route path="/write" element={<Write />}/>
+        <Route path="/board/:id" element={<BoardDetail/>}/>
       </Routes>
     </BrowserRouter>
   )

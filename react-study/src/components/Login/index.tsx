@@ -25,7 +25,7 @@ const Login = () => {
         onChange={auth.handleLogin}
       />
       <input
-        type="text"
+        type="password"
         placeholder="비밀번호"
         style={{ marginBottom: "12px" }}
         name='password'
