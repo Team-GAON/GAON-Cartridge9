@@ -22,17 +22,19 @@ const useAuth = () => {
     setSignUpData((prev)=>({...prev, [name]:value}))
   }
 
-  const login = async () =>{
+  const login = async () => {
     setLoading(true)
     try {
       const res = await axios.post(`${API_URL}/auth/login`, loginData)
       if (res){
-        setCookie('ACCESS_TOKEN', res.data.data.accessToken, {path:'/'})
-        setCookie('REFRESH_TOKEN', res.data.data.refreshToken, {path:'/'})
+        setCookie('ACCESS_TOKEN', res.data.accessToken, {path:'/'})
+        setCookie('REFRESH_TOKEN', res.data.refreshToken, {path:'/'})
+        alert('로그인성공')
+        navigate('/')
       }
       
-    } catch {
-      alert('네트워크에러')
+    } catch{
+        alert('네트워크에러')
     }
     setLoading(false)
   }
@@ -42,9 +44,10 @@ const useAuth = () => {
     try {
       const res = await axios.post(`${API_URL}/auth/signup`, signUpData)
       if (res){
+        alert('회원가입 성공')
         navigate('/login')
       }
-    } catch {
+    } catch (err:any){
       alert('네트워크에러')
     }
     setLoading(false)
